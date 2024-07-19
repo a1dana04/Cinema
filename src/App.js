@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.scss';
+import { Route, Routes } from "react-router-dom";
+// import "./App.scss";
+import './App.scss'
+import Header from "./components/Header";
+import Popular from "./components/Popular";
+import Home from "./components/Home";
+import TopRated from "./components/TopRated";
+import MovieDetails from "./Pages/MovieDetails";
+import ActorDetails from "./Pages/ActorDetails";
+import Search from "./components/Search";
+import { useContext } from "react";
+import { LanguageContex } from "./context";
+import Favorite from "./components/Favorite";
 
 function App() {
+  const {dark} = useContext(LanguageContex)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{
+    background: dark ? "black":"white",color: dark ? "white" :""
+    }}>
+      <Header />
+      {/* <Hero/> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/popular" element={<Popular />} />
+        <Route path="/toprated" element={<TopRated />} />
+        <Route path="/movieDetails/:kinoId" element={<MovieDetails/>}/>
+        <Route path="/actorDetails/:actorId" element={<ActorDetails/>}/>
+        <Route path="/search/:nameMovie" element={<Search/>}/>
+        <Route path="/favorite" element={<Favorite/>}/>
+      </Routes>
     </div>
   );
 }

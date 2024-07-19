@@ -1,0 +1,18 @@
+.movieCard {
+    width: 20%;
+    height: 500px;
+    border: 2px solid black;
+    text-align: center;
+    overflow: hidden;
+    img {
+      width: 243px;
+      transition: .6s;
+      &:hover {
+        transform: scale(1.1);
+       
+      }
+    }
+    h4 {
+      margin-top: 15px;
+    }
+  }

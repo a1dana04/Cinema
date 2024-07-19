@@ -1,0 +1,29 @@
+#video{
+    padding: 35px 0;
+
+    .video{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .btn{
+     
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        button{
+            width: 100px;
+            height: 40px;
+            background: black;
+            color:white;
+            border: none;
+            border-radius: 11px;
+            margin-top: 30px;
+        }
+       
+    }
+}

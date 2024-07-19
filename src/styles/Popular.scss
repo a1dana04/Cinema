@@ -1,0 +1,41 @@
+#popular{
+    padding: 30px 0;
+    .loiding{
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .popular{
+    display: flex;
+    align-items: center;
+  
+    flex-wrap: wrap;
+    gap: 90px;
+ 
+    }
+    .pogination{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 30px 0;
+    &--left{
+        font-size: 15px;
+        padding: 12px 40px ;
+        background: rgb(9, 9, 9);
+        border-radius: 11px;
+        color: white;
+        
+    }
+
+    &--right{
+        font-size: 15px;
+        padding: 12px 40px ;
+        background: rgb(9, 9, 9);
+        border-radius: 11px;
+        color: white;
+        
+    }
+    }
+}

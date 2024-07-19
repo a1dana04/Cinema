@@ -1,0 +1,80 @@
+#header{
+    z-index: 99;
+    background: #1c1c67;
+    padding: 30px 0;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(5px);
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        img{
+            width: 200px;
+        }
+        &--nav{
+            a{
+                margin-left: 30px;
+                font-size: 20px;
+                color: white;
+            }
+        }
+        &--fav{
+            position: relative;
+           
+
+           
+           
+      
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+               position: absolute;
+               top: -17px;
+               right: -20px;
+                width: 20px;
+                height: 25px;
+                background: red;
+                border-radius: 25px;
+                font-size: 15px;
+            }
+        }
+        select{
+            font-size: 20px ;
+            border: none;
+            outline: none;
+            color: white;
+            background: none;
+
+        }
+        a{
+            font-size: 20px;
+            color: white;
+        }
+        &--search{
+           
+           input{
+            border: none;
+            outline: none;
+            background: transparent;
+            border-bottom: 3px solid white;
+            color: white;
+            font-size: 20px;
+            &::placeholder{
+                color: white;
+                
+            }
+
+           }
+           button{
+            padding: 12px 40px ;
+            background: white;
+            border-radius: 11px;
+            margin-left: 20px;
+           }
+
+           
+        }
+    }
+}

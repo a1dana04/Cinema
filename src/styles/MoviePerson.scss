@@ -1,0 +1,13 @@
+#person{
+    padding: 40px 0;
+    img{
+        width: 200px;
+    }
+    .person{
+        display: flex;
+        align-items:flex-start;
+        gap: 30px;
+        overflow-x: scroll;
+        
+    }
+}
