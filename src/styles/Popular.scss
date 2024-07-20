@@ -1,41 +1,75 @@
-#popular{
+#popular {
     padding: 30px 0;
-    .loiding{
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .popular{
+  }
+  
+  .loiding {
+    margin-top: 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
+  }
   
+  .popular {
+    display: flex;
+    align-items: center;
     flex-wrap: wrap;
     gap: 90px;
- 
+    justify-content: center;
+  }
+  
+  .pogination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 0;
+  }
+  
+  .pogination--left,
+  .pogination--right {
+    font-size: 15px;
+    padding: 12px 40px;
+    background: rgb(9, 9, 9);
+    border-radius: 11px;
+    color: white;
+  }
+  
+  /* Адаптивные стили */
+  @media (max-width: 768px) {
+    .popular {
+      gap: 30px; 
+      justify-content: center; 
     }
-    .pogination{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        padding: 30px 0;
-    &--left{
-        font-size: 15px;
-        padding: 12px 40px ;
-        background: rgb(9, 9, 9);
-        border-radius: 11px;
-        color: white;
-        
+  
+    .pogination--left,
+    .pogination--right {
+      font-size: 14px;
+      padding: 10px 30px;
     }
-
-    &--right{
-        font-size: 15px;
-        padding: 12px 40px ;
-        background: rgb(9, 9, 9);
-        border-radius: 11px;
-        color: white;
-        
+  
+    .pogination {
+      gap: 20px;
+      padding: 20px 0;
     }
+  }
+  
+  @media (max-width: 640px) {
+    .popular {
+      flex-direction: column;
+      gap: 20px; 
+      justify-content: center; 
+      align-items: center; 
     }
-}
+  
+    .pogination--left,
+    .pogination--right {
+      font-size: 12px;
+      padding: 8px 20px;
+    }
+  
+    .pogination {
+      gap: 10px;
+      padding: 10px 0;
+    }
+  }
+  

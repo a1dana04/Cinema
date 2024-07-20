@@ -1,80 +1,279 @@
-#header{
+
+.header--modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+  
+  .header--modal__content {
+    background: #1c1c67;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .header--modal__content--img {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header--modal__close {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .header--modal__nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .header--modal__nav a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .header--modal__nav a:hover {
+    text-decoration: underline;
+  }
+  
+
+  @media (max-width: 768px) {
+    .header--modal {
+      display: flex; 
+    }
+  
+    .header--nav {
+      display: none; 
+    }
+  
+    .hamburger {
+      display: block; 
+    }
+  }
+  
+ 
+  #header {
     z-index: 99;
     background: #1c1c67;
-    padding: 30px 0;
+    padding: 20px 0;
     position: sticky;
     top: 0;
     backdrop-filter: blur(5px);
-    .header{
-        display: flex;
-        align-items: center;
-        justify-content: space-between; 
-        img{
-            width: 200px;
-        }
-        &--nav{
-            a{
-                margin-left: 30px;
-                font-size: 20px;
-                color: white;
-            }
-        }
-        &--fav{
-            position: relative;
-           
-
-           
-           
-      
-            span{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-               position: absolute;
-               top: -17px;
-               right: -20px;
-                width: 20px;
-                height: 25px;
-                background: red;
-                border-radius: 25px;
-                font-size: 15px;
-            }
-        }
-        select{
-            font-size: 20px ;
-            border: none;
-            outline: none;
-            color: white;
-            background: none;
-
-        }
-        a{
-            font-size: 20px;
-            color: white;
-        }
-        &--search{
-           
-           input{
-            border: none;
-            outline: none;
-            background: transparent;
-            border-bottom: 3px solid white;
-            color: white;
-            font-size: 20px;
-            &::placeholder{
-                color: white;
-                
-            }
-
-           }
-           button{
-            padding: 12px 40px ;
-            background: white;
-            border-radius: 11px;
-            margin-left: 20px;
-           }
-
-           
-        }
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .header img {
+    width: 150px;
+  }
+  
+  .header--nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .header--nav a {
+    font-size: 16px;
+    color: white;
+  }
+  
+  .header--fav {
+    position: relative;
+  }
+  
+  .header--fav span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -17px;
+    right: -20px;
+    width: 20px;
+    height: 25px;
+    background: red;
+    border-radius: 25px;
+    font-size: 15px;
+  }
+  
+  .header select {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    background: none;
+  }
+  
+  .header a {
+    font-size: 16px;
+    color: white;
+  }
+  
+  .header--search input {
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .header--search input::placeholder {
+    color: white;
+  }
+  
+  .header--search button {
+    padding: 8px 20px;
+    background: white;
+    border-radius: 8px;
+    margin-left: 10px;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  
+  @media (max-width: 640px) {
+    .header--nav {
+      display: none;
     }
-}
+  
+    .hamburger {
+      display: block;
+    }
+  }
+  
+  @media (min-width: 440px) {
+    .header img {
+      width: 180px;
+    }
+  
+    .header--nav a {
+      font-size: 18px;
+    }
+  
+    .header select {
+      font-size: 18px;
+    }
+  
+    .header a {
+      font-size: 18px;
+    }
+  
+    .header--search input {
+      font-size: 18px;
+    }
+  
+    .header--search button {
+      padding: 10px 25px;
+    }
+  }
+  
+  @media (min-width: 640px) {
+    .header img {
+      width: 200px;
+    }
+  
+    .header--nav a {
+      font-size: 20px;
+    }
+  
+    .header select {
+      font-size: 20px;
+    }
+  
+    .header a {
+      font-size: 20px;
+    }
+  
+    .header--search input {
+      font-size: 20px;
+    }
+  
+    .header--search button {
+      padding: 12px 30px;
+    }
+  
+    .header--nav {
+      display: flex; 
+    }
+  
+    .hamburger {
+      display: none; 
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .header img {
+      width: 220px;
+    }
+  
+    .header--nav a {
+      font-size: 22px;
+    }
+  
+    .header select {
+      font-size: 22px;
+    }
+  
+    .header a {
+      font-size: 22px;
+    }
+  
+    .header--search input {
+      font-size: 22px;
+    }
+  
+    .header--search button {
+      padding: 14px 35px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .header img {
+      width: 240px;
+    }
+  
+    .header--nav a {
+      font-size: 24px;
+    }
+  
+    .header select {
+      font-size: 24px;
+    }
+  
+    .header a {
+      font-size: 24px;
+    }
+  
+    .header--search input {
+      font-size: 24px;
+    }
+  
+    .header--search button {
+      padding: 16px 40px;
+    }
+  }
+  

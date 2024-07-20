@@ -9,13 +9,13 @@ const ActorDetails = () => {
   let { actorId } = useParams();
   const [detActor, setDetACtor] = useState({});
   const [strCount, setStrCount] = useState(300);
-  const {language} =useContext(LanguageContex)
-  //   setDetACtor([])
+  const { language } = useContext(LanguageContex);
+
   const getAcrorDet = (key) => {
     axios(
       `https://api.themoviedb.org/3/person/${actorId}?api_key=${key}&language=${language}`
     ).then((res) => {
-      setDetACtor(res.data, "aidana3");
+      setDetACtor(res.data);
     });
   };
 
@@ -27,7 +27,6 @@ const ActorDetails = () => {
     name,
     biography,
     profile_path,
-    also_known_as,
     birthday,
     place_of_birth,
   } = detActor;
@@ -43,35 +42,30 @@ const ActorDetails = () => {
           <div className="actorDetails--content">
             <h1>{name}</h1>
             <h2>Biography:</h2>
-            {biography?.slice(0, strCount)}
-        
-              <span onClick={strCount>300?()=> setStrCount(300 ) :()=>setStrCount(biography.length)}>{strCount>300 ? "close.." :"more..."} </span>
-      
-              {/* <span onClick={() => setStrCount(strCount + 300)}>
-                читать дальше...
-              </span> */}
-      
+            <p>
+              {biography?.slice(0, strCount)}
+              <span
+                onClick={() => setStrCount(strCount > 300 ? 300 : biography.length)}
+              >
+                {strCount > 300 ? "close.." : "more..."}
+              </span>
+            </p>
             <div className="actorDetails--content__btn"></div>
-          
           </div>
-         
         </div>
-       
 
         <div className="actor">
-          <h3>Персональная информация</h3>
-          <h3>Дата рождения</h3>
+          <h3>Personal Information</h3>
+          <h3>Date of Birth</h3>
           <h4>{birthday}</h4>
-          <h3>Место рождения</h3>
+          <h3>Place of Birth</h3>
           <h4>{place_of_birth}</h4>
-        
         </div>
-        <MoviePerson id ={actorId}/>
+        <MoviePerson id={actorId} />
       </div>
-  
     </div>
-    
   );
 };
 
 export default ActorDetails;
+
